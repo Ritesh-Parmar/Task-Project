@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HowIDidItCard from "../components/HowIDidItCard";
+import Cubes from "../components/Cubes";
 import howImageOne from "../assets/i1.png";
 import howImageTwo from "../assets/i2.png";
 import howImageThree from "../assets/i3.png";
@@ -190,7 +191,31 @@ function Home({ darkMode }: HomeProps) {
                         />
                     </div>
                 )}
-            
+            <div
+                className={`mt-12 w-full rounded-3xl border p-4 sm:p-6 ${
+                    darkMode
+                        ? "bg-slate-900/70 border-white/10"
+                        : "bg-white/70 border-slate-200/80"
+                }`}
+            >
+                <Cubes
+                    gridSize={16}
+                    maxAngle={45}
+                    radius={5}
+                    cellGap={6}
+                    borderStyle={
+                        darkMode
+                            ? "1px solid rgba(255, 255, 255, 0.3)"
+                            : "1px solid rgba(15, 23, 42, 0.15)"
+                    }
+                    faceColor={darkMode ? "#0b1220" : "#f8fafc"}
+                    rippleColor={darkMode ? "#22d3ee" : "#34d399"}
+                    rippleSpeed={1.4}
+                    shadow={darkMode ? "0 10px 24px rgba(8, 15, 30, 0.45)" : "0 10px 24px rgba(15, 23, 42, 0.12)"}
+                    autoAnimate={true}
+                    rippleOnClick={true}
+                />
+            </div>
         </div>
     );
 }

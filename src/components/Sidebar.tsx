@@ -38,7 +38,7 @@ function Sidebar({ currentPage, setCurrentPage, darkMode }: SidebarProps) {
         </p>
       </div>
       <div className="hidden md:block pt-20" />
-      <div className="flex flex-row flex-wrap justify-center md:justify-start md:flex-col gap-3 md:gap-6">
+      <div className="mt-16 gap-5 flex flex-row flex-wrap justify-center md:justify-start md:flex-col gap-3 md:gap-12">
         {navItems.map((item) => (
           <button
             key={item.id}
