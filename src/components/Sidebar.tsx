@@ -15,7 +15,7 @@ const navItems = [
 function Sidebar({ currentPage, setCurrentPage, darkMode }: SidebarProps) {
   return (
     <aside
-      className={`w-64 h-screen flex flex-col px-5 py-6 gap-5 border-r ${
+      className={`w-full md:w-64 h-auto md:h-screen flex flex-col px-4 sm:px-5 py-4 md:py-6 gap-4 md:gap-5 border-b md:border-b-0 md:border-r ${
         darkMode
           ? "bg-[#0b1118] text-slate-100 border-white/10"
           : "bg-stone-100 text-slate-900 border-slate-200/80"
@@ -37,8 +37,8 @@ function Sidebar({ currentPage, setCurrentPage, darkMode }: SidebarProps) {
           Sample Project
         </p>
       </div>
-      <div className="pt-20" />
-      <div className="flex flex-col gap-20">
+      <div className="hidden md:block pt-20" />
+      <div className="flex flex-row flex-wrap justify-center md:justify-start md:flex-col gap-3 md:gap-6">
         {navItems.map((item) => (
           <button
             key={item.id}

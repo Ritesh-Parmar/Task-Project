@@ -28,14 +28,14 @@ function App() {
 
   return (
     <div
-      className={`flex min-h-screen ${
+      className={`flex min-h-screen flex-col md:flex-row ${
         darkMode
           ? "bg-gradient-to-br from-[#0b1118] via-[#0f172a] to-[#0b1118] text-slate-100"
           : "bg-gradient-to-br from-stone-50 via-amber-50 to-emerald-50 text-slate-900"
       }`}
     >
       <Sidebar currentPage={currentPage} setCurrentPage={setCurrentPage} darkMode={darkMode} />
-      <main className="flex-1 px-8 py-7 overflow-y-auto">
+      <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 md:py-7 overflow-y-auto">
         {renderPage()}
       </main>
     </div>

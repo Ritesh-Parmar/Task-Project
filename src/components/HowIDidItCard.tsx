@@ -12,7 +12,7 @@ interface HowIDidItCardProps {
 function HowIDidItCard({ items, darkMode }: HowIDidItCardProps) {
   return (
     <div
-      className={`relative z-50 w-[420px] max-h-[360px] overflow-y-auto rounded-2xl border p-4 shadow-[0_22px_50px_-35px_rgba(15,23,42,0.75)] ${
+      className={`relative z-50 w-full max-w-[420px] max-h-[360px] overflow-y-auto rounded-2xl border p-4 shadow-[0_22px_50px_-35px_rgba(15,23,42,0.75)] ${
         darkMode
           ? "border-white/10 bg-slate-900/95"
           : "border-slate-200/80 bg-white/95"

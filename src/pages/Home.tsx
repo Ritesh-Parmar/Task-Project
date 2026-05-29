@@ -39,10 +39,10 @@ function Home({ darkMode }: HomeProps) {
         <div className="flex flex-col gap-7">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
-                    <h1 className={`text-4xl font-semibold tracking-tight ${darkMode ? "text-slate-100" : "text-slate-900"}`}>
+                    <h1 className={`text-3xl sm:text-4xl font-semibold tracking-tight ${darkMode ? "text-slate-100" : "text-slate-900"}`}>
                         Hi Sir!👋
                     </h1>
-                    <p className={`mt-2 max-w-3xl ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
+                    <p className={`mt-2 max-w-3xl text-sm sm:text-base ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
                         So I have completed the task you gave.. and this application itself will tell you how I did each of the tasks which were mentioned in the PDF. You are currently viewing the Home screen of this application and just a little below this page you will find the summary of how each task was done by me.
                     </p>
                 </div>
@@ -63,10 +63,10 @@ function Home({ darkMode }: HomeProps) {
                 </div>
             </div>
 
-            <div className="relative pl-64">
-                <div className="flex items-center gap-4">
+            <div className="relative lg:pl-64">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                     <div
-                        className={`w-max rounded-full px-7 py-3 text-base font-semibold tracking-wide shadow-[0_16px_36px_-22px_rgba(15,23,42,0.7)] ${
+                        className={`w-full sm:w-max text-center sm:text-left rounded-full px-5 sm:px-7 py-2.5 sm:py-3 text-sm sm:text-base font-semibold tracking-wide shadow-[0_16px_36px_-22px_rgba(15,23,42,0.7)] ${
                             darkMode
                                 ? "bg-slate-800/80 text-slate-100 border border-white/10"
                                 : "bg-slate-900 text-white"
@@ -78,16 +78,16 @@ function Home({ darkMode }: HomeProps) {
                         type="button"
                         onClick={() => setShowHowIDidIt((prev) => !prev)}
                         data-howididit-trigger
-                        className="rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_14px_30px_-18px_rgba(16,185,129,0.6)] transition hover:bg-emerald-600 active:translate-y-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+                        className="w-full sm:w-auto rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_14px_30px_-18px_rgba(16,185,129,0.6)] transition hover:bg-emerald-600 active:translate-y-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
                     >
                         How I did it
                     </button>
-                    <div className={darkMode ? "text-slate-400" : "text-slate-500"}>
+                    <div className={`${darkMode ? "text-slate-400" : "text-slate-500"} hidden lg:block`}>
                         {"<-- try clicking this button"}
                     </div>
                 </div>
                 {showHowIDidIt && (
-                    <div className="absolute right-48" data-howididit-card>
+                    <div className="mt-4 lg:mt-0 lg:absolute lg:right-48" data-howididit-card>
                         <HowIDidItCard
                             darkMode={darkMode}
                             items={[
@@ -115,21 +115,21 @@ function Home({ darkMode }: HomeProps) {
                     </div>
                 )}
             </div>
-            <div className={`-mt-7 flex flex-col pl-80 text-xl font-semibold leading-5 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+            <div className={`hidden lg:flex -mt-7 flex-col pl-80 text-xl font-semibold leading-5 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                 <span>|</span>
                 <span>|</span>
                 <span>|</span>
                 <span>|</span>
             </div>
-            <span className={`-mt-9 text-2xl font-semibold ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+            <span className={`hidden lg:block -mt-9 text-2xl font-semibold ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                 {"<--------------------------------"}
             </span>
-            <div className="flex">
-                <span className={`-mt-4 text-xl font-semibold ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3">
+                <span className={`hidden lg:inline -mt-4 text-xl font-semibold ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                     {"<----------go to this page----------------------"}
                 </span>
                 <div
-                    className={`-mt-4 w-max rounded-2xl px-7 py-3 text-base tracking-wide shadow-[0_16px_36px_-22px_rgba(15,23,42,0.7)] ${
+                    className={`w-full lg:w-max lg:-mt-4 rounded-2xl px-6 sm:px-7 py-3 text-sm sm:text-base tracking-wide shadow-[0_16px_36px_-22px_rgba(15,23,42,0.7)] ${
                         darkMode
                             ? "bg-slate-800/80 text-slate-100 border border-white/10"
                             : "bg-slate-900 text-white"
@@ -149,16 +149,16 @@ function Home({ darkMode }: HomeProps) {
                 </div>
             </div>
             
-                <span className={`-mt-8 text-xl font-semibold ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+                <span className={`hidden lg:block -mt-8 text-xl font-semibold ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                     {"<----------go to this page-----------"}
                 </span>
-                <span className={`-mt-10 pl-80 text-xl flex flex-col leading-5 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+                <span className={`hidden lg:flex -mt-10 pl-80 text-xl flex-col leading-5 ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                     <span>|</span>
                     <span>|</span>
                 </span>
-                <div className="relative ml-48 -mt-4 flex flex-wrap items-center gap-3">
+                <div className="relative -mt-4 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 lg:ml-48">
                     <div
-                        className={`w-max rounded-2xl px-7 py-3 text-base tracking-wide shadow-[0_16px_36px_-22px_rgba(15,23,42,0.7)] ${
+                        className={`w-full sm:w-max text-center sm:text-left rounded-2xl px-6 sm:px-7 py-3 text-sm sm:text-base tracking-wide shadow-[0_16px_36px_-22px_rgba(15,23,42,0.7)] ${
                             darkMode
                                 ? "bg-slate-800/80 text-slate-100 border border-white/10"
                                 : "bg-slate-900 text-white"
@@ -170,13 +170,13 @@ function Home({ darkMode }: HomeProps) {
                         type="button"
                         onClick={() => setShowThemeHowIdIdIt((prev) => !prev)}
                         data-howididit-trigger
-                        className="rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_14px_30px_-18px_rgba(16,185,129,0.6)] transition hover:bg-emerald-600 active:translate-y-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+                        className="w-full sm:w-auto rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_14px_30px_-18px_rgba(16,185,129,0.6)] transition hover:bg-emerald-600 active:translate-y-[1px] focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
                     >
                         How I did it
                     </button>
                 </div>
                 {showThemeHowIdIdIt && (
-                    <div className="absolute right-64 mt-72" data-howididit-card>
+                    <div className="mt-4 lg:absolute lg:right-64 lg:mt-72" data-howididit-card>
                         <HowIDidItCard
                             darkMode={darkMode}
                             items={[
